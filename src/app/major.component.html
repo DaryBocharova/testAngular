@@ -1,9 +1,9 @@
 <table>
     <tr>
         <th>Information</th>
-        <th>userId</th>
-        <th>id</th>
-        <th>title</th>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
     </tr>
     <tr *ngFor="let u of users" >
         <th><button [routerLink]= '["/user"]' [queryParams]="{id: u.id}">info</button></th>

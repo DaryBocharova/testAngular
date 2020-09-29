@@ -12,7 +12,7 @@ import { MajorComponent } from './major.component';
 
 const routes: Routes = [
   {path: '', component: MajorComponent},
-  {path: 'users', component: UserComponent}
+  {path: 'user', component: UserComponent}
 ];
 
 @NgModule({
