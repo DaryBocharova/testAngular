@@ -6,11 +6,11 @@
         <th>Title</th>
     </tr>
     <tr *ngFor="let u of users" >
-        <th><button [routerLink]= '["/user"]' [queryParams]="{id: u.id}">info</button></th>
+        <th><button [routerLink]= '["/user"]' [queryParams]="{id: u.userId}">info</button></th>
         <th (click)="getInfo(u)">{{u.userId}}</th>
         <th (click)="getInfo(u)">{{u.id}}</th>
         <th (click)="getInfo(u)">{{u.title}}</th>
-        <th *ngIf="u.isDetail" (click)="getInfo(u)">
+        <th *ngIf="u.info" (click)="getInfo(u)">
             {{u.body}}
         </th>
     </tr>

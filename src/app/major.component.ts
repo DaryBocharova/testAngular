@@ -15,10 +15,12 @@ export class Users {
   styleUrls:['./major.component.css'],
 })
 export class MajorComponent {
-  users: any[];
+  users: any[] = [];
   constructor(private search: SearchService) {
     this.search.load().subscribe((data:Array<Users>) => {
+      if (this.users != null) {
       this.users = data;
+      }
     });
   }
 

@@ -1,42 +1,47 @@
-<form [formGroup]="userForm" >
-  <div>
-      <label>Имя</label>
-      <input  name="name" formControlName="name" [(ngModel)]="user.name"/>
-  </div>
-  <div>
-      <label>Email</label>
-      <input   name="email" formControlName="email" [(ngModel)]="user.email"/>
-      <div class="alert alert-danger"
-      *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">
-      Заполните поле
-  </div>
-  </div>
-  <div  >
-      <label>Улица</label>
-      <input   name="street" formControlName="street" [(ngModel)]="user.address.street"/>
-  </div>
-  <div  >
-      <label>Адрес</label>
-      <input   name="suite" formControlName="suite" [(ngModel)]="user.address.suite"/>
-  </div>
-  <div  >
-      <label>Город</label>
-      <input   name="city" formControlName="city" [(ngModel)]="user.address.city"/>
-  </div>
-  <div  >
-      <label>Индекс</label>
-      <input   name="zipcode" formControlName="zipcode" [(ngModel)]="user.address.zipcode"/>
-  </div>
-  <div  >
-      <label>Телефон</label>
-      <input   name="phone" formControlName="phone" [(ngModel)]="user.phone"/>
-  </div>
-  <div  >
-      <label>Сайт</label>
-      <input   name="website" formControlName="website" [(ngModel)]="user.website"/>
-  </div>
-  
+<form *ngIf="userForm"  [formGroup]="userForm">
+   <div>
+        <label>Имя</label>
+        <input formControlName="name" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input formControlName="email" />
+       <div class="alert alert-danger"
+            *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">
+            Заполните поле
+        </div>
+    </div>
+   <div>
+        <label>Улица</label>
+        <input formControlName="street" />
+    </div>
+    <div>
+        <label>Адрес</label>
+        <input formControlName="suite" />
+    </div>
+    <div>
+        <label>Город</label>
+        <input formControlName="city" />
+    </div>
+    <div>
+        <label>Индекс</label>
+        <input formControlName="zipcode" />
+    </div>
+    <div>
+        <label>Телефон</label>
+        <input formControlName="phone" />
+    </div>
+    <div>
+        <label>Сайт</label>
+        <input formControlName="website" />
+    </div>
+    <div>
+        <label>Компания</label>
+        <input formControlName="company" />
+    </div>
+
+    <pre>
+        {{userForm.value | json}}
+    </pre>
+    
 </form>
-<label>Компания</label>
-<p><span >{{user.company.name}}</span></p>
-<br>
